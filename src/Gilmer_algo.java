@@ -4,10 +4,10 @@ import java.util.HashSet;
 
 public class Gilmer_algo {
 
-    final static int startingPoint = 250;
-    final static int e = 3;
-    final static int b = 10;
-    final static int m = 1000;
+//    final static int startingPoint = 8;
+    final static int e = 2;
+    final static int b = 9;
+    final static int m = 8000;
     final static int alpha = (int) Math.pow((b-1), e);
     final static int colnum = m * alpha;
 
@@ -36,7 +36,7 @@ public class Gilmer_algo {
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void run(int startingPoint) throws FileNotFoundException {
         long startTime = System.currentTimeMillis();
 
         HashMap<Integer, Double> dynamic_array = new HashMap<>();
@@ -90,5 +90,14 @@ public class Gilmer_algo {
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println(totalTime / 1000);
+    }
+
+
+
+    public static void main(String[] args) throws  FileNotFoundException{
+        int[] currentRun = {1, 41, 50, 68, 74, 53, 89, 65};
+
+        for (int i : currentRun) run(i);
+
     }
 }
